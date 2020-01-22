@@ -1,0 +1,10 @@
+#!/bin/bash
+mkdir ./batch-output
+
+while IFS= read -r line; do
+
+        echo "Text read from file: $line"
+        ./darknet detector test cfg/skin-disease-two.data cfg/yolov3-tiny-skin-disease-two.cfg backup/yolov3-tiny-skin-disease-two_final.weights $line
+        mv predictions.jpg batch-output/${line##*/}
+
+done < test-skin-disease-two.txt

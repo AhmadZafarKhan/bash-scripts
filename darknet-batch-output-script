@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir ./batch-output
+for i in {0..485}
+do
+	./darknet detector test cfg/obj.data cfg/yolo-obj.cfg backup/yolo-obj_last.weights output-yolo/$i.jpg
+	mv predictions.jpg batch-output/$i.jpg
+done
