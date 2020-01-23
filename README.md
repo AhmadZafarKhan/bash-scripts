@@ -1,2 +1,2 @@
 # bash-scripts
-Just a bash script to test on the entire validation set for YOLO. 
+A bash script to test a whole validation set for YOLO. 
